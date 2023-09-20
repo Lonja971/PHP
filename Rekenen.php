@@ -1,7 +1,7 @@
 <?php
 
-$getal1=15;
-$getal2=3;
+$getal1=52;
+$getal2=5;
 
 $som=$getal1 + $getal2;
 echo "$getal1 + $getal2 = ".$som;
