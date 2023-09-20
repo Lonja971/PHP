@@ -1,5 +1,9 @@
 <?php
 
-echo "Hello world!";
+$tekst = "Hello World!";
+echo $tekst;
+echo $tekst;
+echo $tekst;
+echo $tekst;
 
 ?>
