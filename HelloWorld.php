@@ -1,10 +1,10 @@
 <?php
 
-$tekst = "Hello,World!\n";
-echo $tekst;
-echo $tekst;
-echo $tekst;
-echo $tekst;
-echo $tekst;
+$hello = "Hi";
+$name = "Leonid";
+
+echo $hello;
+echo " ";
+echo $name;
 
 ?>
