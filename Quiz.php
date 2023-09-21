@@ -1,6 +1,6 @@
 <?php
 
-echo "\nv0.5\n\n";
+echo "\nv0.6\n\n";
 
 $random = rand(1,100);
 $keer = 1;
