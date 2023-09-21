@@ -19,7 +19,7 @@ function check($random, $keer) {
    }elseif (is_numeric($antwoord)) {
       if ($random == $antwoord){
          echo "Je hebt het geraden! Het was ".$random."!\n";
-         echo "Je raadt het al in ".$keer." stappen!";
+         echo "Je raadt het al in ".$keer." stappen!\n";
       }elseif ($antwoord > 100) {
          echo "Dit aantal is meer dan 100 -_-\n";
          check($random, $keer);
