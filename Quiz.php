@@ -3,7 +3,6 @@
 echo "\nv0.3\n\n";
 
 $random = rand(1,100);
-echo $random;
 $keer = 1;
 
 echo "\nWe hebben het getal van één tot 100 geraden :)\nWat is dit nummer?\n";
