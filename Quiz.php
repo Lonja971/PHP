@@ -31,7 +31,7 @@ function check($random, $keer) {
          $keer++;
          check($random, $keer);
       }elseif ($random > $antwoord){
-         echo "Nee, groter dan ".$antwoord."🤓\n";
+         echo "Nee, groter dan ".$antwoord."\n";
          $keer++;
          check($random, $keer);
       }
