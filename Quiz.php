@@ -38,5 +38,4 @@ function check($random, $keer) {
       check($random, $keer);
    };
 }
-
 ?>
