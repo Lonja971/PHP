@@ -18,10 +18,7 @@ function check($random, $keer) {
       if ($random == $antwoord){
          echo "\nJe hebt het geraden! Het was ".$random."!\n";
          echo "Je raadt het al in ".$keer." stappen!\n";
-      }elseif ($antwoord > 100) {
-         echo "Gewenst aantal van 1 tot 100 -_-\n";
-         check($random, $keer);
-      }elseif ($antwoord < 1) {
+      }elseif ($antwoord > 100 || $antwoord < 1) {
          echo "Gewenst aantal van 1 tot 100 -_-\n";
          check($random, $keer);
       }elseif ($random < $antwoord){
