@@ -2,7 +2,7 @@
 
 $naam = readline("Geef jouw naam: ");
 $leeftijd = readline("Geef jouw leeftijd: ");
-$beslissendeLeeftijd = 25;
+$beslissendeLeeftijd = 21;
 
 echo "\nHallo $naam! \n";
 
