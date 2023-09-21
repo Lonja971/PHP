@@ -5,7 +5,7 @@ echo "\nv0.6\n\n";
 $random = rand(1,100);
 $keer = 1;
 
-echo "\nWe hebben het getal van één tot 100 geraden :)\nWat is dit nummer?\n";
+echo "\nWe hebben het getal van 1 tot 100 geraden :)\nWat is dit nummer?\n";
 check($random, $keer);
 
 
@@ -19,10 +19,10 @@ function check($random, $keer) {
          echo "\nJe hebt het geraden! Het was ".$random."!\n";
          echo "Je raadt het al in ".$keer." stappen!\n";
       }elseif ($antwoord > 100) {
-         echo "Dit aantal is meer dan 100 -_-\n";
+         echo "Gewenst aantal van 1 tot 100 -_-\n";
          check($random, $keer);
       }elseif ($antwoord < 1) {
-         echo "Dit aantal is kleiner dan 0 -_-\n";
+         echo "Gewenst aantal van 1 tot 100 -_-\n";
          check($random, $keer);
       }elseif ($random < $antwoord){
          echo "No(; Maar het geraden getal is kleiner dan ".$antwoord."\n";
