@@ -1,6 +1,6 @@
 <?php
 
-echo "\nv0.4\n\n";
+echo "\nv0.5\n\n";
 
 $random = rand(1,100);
 $keer = 1;
@@ -17,7 +17,7 @@ function check($random, $keer) {
       echo "Weet jij wat een getal is? Probeer het nog eens.\n";
       check($random, $keer);
    }elseif (is_numeric($antwoord)) {
-      }elseif ($random == $antwoord){
+      if ($random == $antwoord){
          echo "Je hebt het geraden! Het was ".$random."!\n";
          echo "Je raadt het al in ".$keer." stappen!";
       }elseif ($antwoord > 100) {
@@ -37,10 +37,10 @@ function check($random, $keer) {
       }
       else{
          echo "ERROR";
-      }
+      };
    }else{
       echo "ERROR";
-   }
+   };
 }
 
 ?>
