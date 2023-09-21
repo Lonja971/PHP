@@ -13,9 +13,6 @@ function check($random, $keer) {
    $antwoord = readline("Voer de waarde: ");
    if ($antwoord == "stop"){
       exit;
-   }elseif (ctype_alpha($antwoord)) {
-      echo "Weet jij wat een getal is? Probeer het nog eens.\n";
-      check($random, $keer);
    }elseif (is_numeric($antwoord)) {
       if ($random == $antwoord){
          echo "Je hebt het geraden! Het was ".$random."!\n";
@@ -39,7 +36,8 @@ function check($random, $keer) {
          echo "ERROR";
       };
    }else{
-      echo "ERROR";
+      echo "Weet jij wat een getal is? Probeer het nog eens.\n";
+      check($random, $keer);
    };
 }
 
