@@ -1,5 +1,7 @@
 <?php
 
+//Coments
+
 $begin=1;
 $maximum=10;
 $tekst = "Hello, World\n";
