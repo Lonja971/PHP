@@ -12,6 +12,7 @@ check($random, $keer);
 function check($random, $keer) {
    $antwoord = readline("Voer de waarde: ");
    if ($antwoord == "stop"){
+      echo "Zoals u wenst, meester...\n";
       exit;
    }elseif (is_numeric($antwoord)) {
       if ($random == $antwoord){
@@ -28,7 +29,7 @@ function check($random, $keer) {
          $keer++;
          check($random, $keer);
       }elseif ($random > $antwoord){
-         echo "Nee, groter dan ".$antwoord."\n";
+         echo "Nee, deze getal is groter dan ".$antwoord."\n";
          $keer++;
          check($random, $keer);
       }
