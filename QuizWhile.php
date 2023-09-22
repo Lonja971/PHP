@@ -7,7 +7,7 @@ echo "\nWe hebben het getal van 1 tot 100 geraden :)\nWat is dit nummer?\n";
 
 while ($whileVoorwaarde == true) {
    $antwoord = readline("Voer de waarde: ");
-   if ($antwoord == "stop"){
+   if (strtolower($antwoord) == "stop"){
       echo "Zoals u wenst, meester...\n";
       exit;
    }elseif (is_numeric($antwoord)) {

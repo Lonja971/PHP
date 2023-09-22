@@ -11,7 +11,7 @@ check($random, $keer);
 
 function check($random, $keer) {
    $antwoord = readline("Voer de waarde: ");
-   if ($antwoord == "stop"){
+   if (strtolower($antwoord) == "stop"){
       echo "Zoals u wenst, meester...\n";
       exit;
    }elseif (is_numeric($antwoord)) {
