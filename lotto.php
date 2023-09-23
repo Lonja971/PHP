@@ -1,67 +1,109 @@
 <?php
 
-echo "\nПривіт! Виберіть будь ласка 6 чисел (від 1 до 42)\n";
+$userMoney = 100;
 
-$whileNum = 0;
-$userAnsBox = array();
-$randomAnsBox = array();
+echo "\nHallo! Het loterijspel kost 5 euro.\n";
+echo "\nWinnen:\n3 juiste cijfers 10 euro\n4 juiste cijfers 1000 euro\n5 juiste cijfers 100.000 euro\n5 juiste cijfers 10.000.000 euro\n";
+echo "\nJe balans: ".$userMoney." euro.\n";
+startMenu($userMoney);
 
-while ($whileNum < 6) {
-   if($whileNum == 0){
-      $userAnswer = readline("Введіть перше число: ");
-   }elseif($whileNum == 1){
-      $userAnswer = readline("Введіть друге число: ");
-   }elseif($whileNum == 2){
-      $userAnswer = readline("Введіть третє число: ");
-   }elseif($whileNum == 3){
-      $userAnswer = readline("Введіть четверте число: ");
-   }elseif($whileNum == 4){
-      $userAnswer = readline("Введіть п'яте число: ");
-   }elseif($whileNum == 5){
-      $userAnswer = readline("Введіть шосте число: ");
-   }else{
-      echo "ERROR\n";
-   };
-   if (is_numeric($userAnswer)){
-      if($userAnswer > 42 || $userAnswer < 1){
-         echo "Введіть число ВІД 1 ДO 42\n";
+function startMenu($userMoney) {
+   $startWhileCheck = true;
+   while ($startWhileCheck == true){
+      $userStartInput = readline("Als je wilt beginnen, schrijf dan 'start' of 'stop': ");
+      if (strtolower($userStartInput) == "start"){
+         startGame($userMoney);
+         $userStartInput = false;
+      }elseif (strtolower($userStartInput) == "stop"){
+         die;
       }else{
-         $userAnsBox[] = $userAnswer;
-         $whileNum++;   
+         echo "Het spijt me, wat?\n";
       };
-   }else{
-      echo "Це не число. Спробуйте ще\n";
-   };
-};
-for ($forNum = 0; $forNum < 6; $forNum++) {
-   $random = rand(1,42);
-   $randomAnsBox[] = $random;
+   }
 }
-sort($userAnsBox);
-sort($randomAnsBox);
-echo "\nВаші числа: ";
-foreach ($userAnsBox as $printUsersNum){
-   echo $printUsersNum." ";
-};
-echo ".\nВиграшні числа: ";
-foreach ($randomAnsBox as $printRandomNum){
-   echo $printRandomNum." ";
-};
-echo ".\n";
 
-$commonElements = array_intersect($userAnsBox, $randomAnsBox);
-$commonCount = count($commonElements);
-echo "\nКількість спільних чисел: ".$commonCount.";\n";
-if ($commonCount == 3){
-   echo "Ви виграли: 10 euro\n";
-}elseif($commonCount == 4){
-   echo "Ви виграли: 1000 euro\n";
-}elseif($commonCount == 5){
-   echo "Ви виграли: 100.000 euro\n";
-}elseif($commonCount == 6){
-   echo "Ви виграли: 10.000.000 euro\n";
-}else{
-   echo "Ви нічого не виграли(\n";
-}
+function startGame($userMoney) {
+   $whileNum = 0;
+   $userAnsBox = array();
+   $randomAnsBox = array();
+   echo "\nKies 6 cijfers (van 1 tot 42)\n";
+   while ($whileNum < 6) {
+      if($whileNum == 0){
+         $userAnswer = readline("Voer het eerste nummer in: ");
+      }elseif($whileNum == 1){
+         $userAnswer = readline("Voer het tweede nummer in: ");
+      }elseif($whileNum == 2){
+         $userAnswer = readline("Voer het derde nummer in: ");
+      }elseif($whileNum == 3){
+         $userAnswer = readline("Voer het vierde getal in: ");
+      }elseif($whileNum == 4){
+         $userAnswer = readline("Voer het vijfde getal in: ");
+      }elseif($whileNum == 5){
+         $userAnswer = readline("Voer het zesde getal in: ");
+      }else{
+         echo "ERROR\n";
+      };
+      if (is_numeric($userAnswer)){
+         if($userAnswer > 42 || $userAnswer < 1){
+            echo "!!! Voer een getal in VAN 1 TOT 42 !!!\n";
+         }else{
+            $userAnsBox[] = $userAnswer;
+            $whileNum++;   
+         };
+      }else{
+         echo "Het is geen getal. Probeer het nog eens...\n";
+      };
+   };
+   for ($forNum = 0; $forNum < 6; $forNum++) {
+      $random = rand(1,42);
+      $randomAnsBox[] = $random;
+   }
+   sort($userAnsBox);
+   sort($randomAnsBox);
+   echo "\nJouw cijfers: ";
+   foreach ($userAnsBox as $printUsersNum){
+      echo $printUsersNum." ";
+   };
+   echo ".\nWinnende nummers: ";
+   foreach ($randomAnsBox as $printRandomNum){
+      echo $printRandomNum." ";
+   };
+   echo ".\n";
+   
+   $commonElements = array_intersect($userAnsBox, $randomAnsBox);
+   $commonCount = count($commonElements);
+   echo "\nAantal gemeenschappelijke nummers: ".$commonCount.";\n";
+   if ($commonCount == 3){
+      echo "Jij hebt gewonnen: 10 euro\n";
+      $userMoney += 10;
+   }elseif($commonCount == 4){
+      echo "Jij hebt gewonnen: 1000 euro\n";
+      $userMoney += 1000;
+   }elseif($commonCount == 5){
+      echo "Jij hebt gewonnen: 100.000 euro\n";
+      $userMoney += 100000;
+   }elseif($commonCount == 6){
+      echo "Jij hebt gewonnen: 10.000.000 euro\n";
+      $userMoney += 10000000;
+   }else{
+      echo "Je zult niets winnen(\n";
+      $userMoney -= 5;
+   }
+
+   echo "Je balans: ".$userMoney." euro.\n";
+   $whileEndCheck = true;
+   while($whileEndCheck == true){
+      $return = readline("Wil je nog een keer spelen? (ja/nee): ");
+      if (strtolower($return) == "ja"){
+         $whileEndCheck = true;
+         $startWhileCheck = true;
+         startMenu($userMoney);
+      }elseif (strtolower($return) == "nee"){
+         die;
+      }else{
+         echo "Het spijt me, wat?\n";
+      };
+   }
+};
 
 ?>
