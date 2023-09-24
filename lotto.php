@@ -26,6 +26,7 @@ function startGame($userMoney) {
    $whileNum = 0;
    $userAnsBox = array();
    $randomAnsBox = array();
+   $userMoney -= 5;
    echo "\nKies 6 cijfers (van 1 tot 42)\n";
    while ($whileNum < 6) {
       if($whileNum == 0){
@@ -60,15 +61,15 @@ function startGame($userMoney) {
    }
    sort($userAnsBox);
    sort($randomAnsBox);
-   echo "\nJouw cijfers: ";
+   echo "\nJouw cijfers:     ";
    foreach ($userAnsBox as $printUsersNum){
       echo $printUsersNum." ";
    };
-   echo ".\nWinnende nummers: ";
+   echo "\nWinnende nummers: ";
    foreach ($randomAnsBox as $printRandomNum){
       echo $printRandomNum." ";
    };
-   echo ".\n";
+   echo "\n";
    
    $commonElements = array_intersect($userAnsBox, $randomAnsBox);
    $commonCount = count($commonElements);
@@ -87,23 +88,10 @@ function startGame($userMoney) {
       $userMoney += 10000000;
    }else{
       echo "Je zult niets winnen(\n";
-      $userMoney -= 5;
    }
 
    echo "Je balans: ".$userMoney." euro.\n";
-   $whileEndCheck = true;
-   while($whileEndCheck == true){
-      $return = readline("Wil je nog een keer spelen? (ja/nee): ");
-      if (strtolower($return) == "ja"){
-         $whileEndCheck = true;
-         $startWhileCheck = true;
-         startMenu($userMoney);
-      }elseif (strtolower($return) == "nee"){
-         die;
-      }else{
-         echo "Het spijt me, wat?\n";
-      };
-   }
+   startMenu($userMoney);
 };
 
 ?>
