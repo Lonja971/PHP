@@ -3,8 +3,8 @@
 $userMoney = 100;
 
 echo "\nHallo! Het loterijspel kost 5 euro.\n";
-echo "\nWinnen:\n3 juiste cijfers 10 euro\n4 juiste cijfers 1000 euro\n5 juiste cijfers 100.000 euro\n5 juiste cijfers 10.000.000 euro\n";
-echo "\nJe balans: ".$userMoney." euro.\n";
+echo "\nWinnen:\n3 juiste cijfers 10 euro\n4 juiste cijfers 1000 euro\n5 juiste cijfers 100.000 euro\n5 juiste cijfers 10.000.000 euro";
+echo "\n\nJe balans: ".number_format($userMoney, 0, ',','.')." euro.\n";
 startMenu($userMoney);
 
 function startMenu($userMoney) {
@@ -23,6 +23,10 @@ function startMenu($userMoney) {
 }
 
 function startGame($userMoney) {
+   if ($userMoney < 5){
+      echo "Er is niet genoeg geld!";
+      die;
+   };
    $whileNum = 0;
    $userAnsBox = array();
    $randomAnsBox = array();
@@ -75,22 +79,22 @@ function startGame($userMoney) {
    $commonCount = count($commonElements);
    echo "\nAantal gemeenschappelijke nummers: ".$commonCount.";\n";
    if ($commonCount == 3){
-      echo "Jij hebt gewonnen: 10 euro\n";
+      echo "Jij hebt gewonnen: 10 euro.\n";
       $userMoney += 10;
    }elseif($commonCount == 4){
-      echo "Jij hebt gewonnen: 1000 euro\n";
+      echo "Jij hebt gewonnen: 1000 euro.\n";
       $userMoney += 1000;
    }elseif($commonCount == 5){
-      echo "Jij hebt gewonnen: 100.000 euro\n";
+      echo "Jij hebt gewonnen: 100.000 euro.\n";
       $userMoney += 100000;
    }elseif($commonCount == 6){
-      echo "Jij hebt gewonnen: 10.000.000 euro\n";
+      echo "Jij hebt gewonnen: 10.000.000 euro.\n";
       $userMoney += 10000000;
    }else{
       echo "Je zult niets winnen(\n";
    }
 
-   echo "Je balans: ".$userMoney." euro.\n";
+   echo "Je balans: ".number_format($userMoney, 0, ',','.')." euro.\n";
    startMenu($userMoney);
 };
 
