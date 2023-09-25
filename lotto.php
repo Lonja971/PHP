@@ -35,17 +35,17 @@ function startGame($userMoney) {
    echo "\nKies 6 cijfers (van 1 tot 42)\n";
    while ($whileNum < 6) {
       if($whileNum == 0){
-         $userAnswer = readline("Voer het eerste nummer in: ");
+         $userAnswer = readline("Voer het 1e nummer in: ");
       }elseif($whileNum == 1){
-         $userAnswer = readline("Voer het tweede nummer in: ");
+         $userAnswer = readline("Voer het 2e nummer in: ");
       }elseif($whileNum == 2){
-         $userAnswer = readline("Voer het derde nummer in: ");
+         $userAnswer = readline("Voer het 3e nummer in: ");
       }elseif($whileNum == 3){
-         $userAnswer = readline("Voer het vierde getal in: ");
+         $userAnswer = readline("Voer het 4e nummer in: ");
       }elseif($whileNum == 4){
-         $userAnswer = readline("Voer het vijfde getal in: ");
+         $userAnswer = readline("Voer het 5e nummer in: ");
       }elseif($whileNum == 5){
-         $userAnswer = readline("Voer het zesde getal in: ");
+         $userAnswer = readline("Voer het 6e nummer in: ");
       }else{
          echo "ERROR\n";
       };
