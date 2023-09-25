@@ -1,4 +1,5 @@
 <?php
+//v 0.7
 
 $userMoney = 100;
 
