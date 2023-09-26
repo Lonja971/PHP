@@ -54,7 +54,7 @@ function startGame($userMoney) {
             echo "!!! Voer een getal in VAN 1 TOT 42 !!!\n";
          }else{
             $userAnsBox[] = $userAnswer;
-            $whileNum++;   
+            $whileNum++;
          };
       }else{
          echo "Het is geen getal. Probeer het nog eens...\n";
