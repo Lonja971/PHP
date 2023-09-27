@@ -9,12 +9,11 @@ echo "\n\nJe balans: ".number_format($userMoney, 0, ',','.')." euro.\n";
 startMenu($userMoney);
 
 function startMenu($userMoney) {
-   $startWhileCheck = true;
-   while ($startWhileCheck == true){
+   while (true){
       $userStartInput = readline("Als je wilt beginnen, schrijf dan 'start' of 'stop': ");
       if (strtolower($userStartInput) == "start"){
          startGame($userMoney);
-         $userStartInput = false;
+         break;
       }elseif (strtolower($userStartInput) == "stop"){
          die;
       }else{
