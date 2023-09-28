@@ -31,6 +31,7 @@ function startGame($userMoney) {
    $userAnsBox = array();
    $randomAnsBox = array();
    $userMoney -= 5;
+
    echo "\nKies 6 cijfers (van 1 tot 42)\n";
    while ($whileNum < 6) {
       if($whileNum == 0){
