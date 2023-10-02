@@ -9,9 +9,9 @@ function game() {
     $userAttempt = 0;
 
 
-    $chosen_word = $words[array_rand($words)];
+    $randomWord = $words[array_rand($words)];
 
-    $letters = preg_split('//u', strtolower($chosen_word), -1, PREG_SPLIT_NO_EMPTY);
+    $letters = preg_split('//u', strtolower($randomWord), -1, PREG_SPLIT_NO_EMPTY);
     $guessed_letters = array_fill(0, count($letters), '.');
 
     echo "\n".implode("", $guessed_letters) . "\n";
@@ -40,7 +40,7 @@ function game() {
     $contCond = true;
     while($contCond == true){
         $continuation = readline("Ya of nee: ");
-        if (strtolower($continuation) == 'ya'){
+        if (strtolower($continuation) == 'ja'){
             game();
         }elseif (strtolower($continuation) == 'nee'){
             echo "Bedankt voor het spelen!";
