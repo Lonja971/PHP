@@ -26,13 +26,14 @@ while ($voorwaarde == true){
    
    $resultaat = $deeltal/$deler;
    
-   $fullRes = intval($resultaat);
-   $rest = $deeltal % $deler;
+   // Видалено floor() з результату
+   $fullRes = $resultaat; // Змінено на просте присвоєння
+   $rest = intval($deeltal) % intval($deler);
    
    if ($rest == 0){
-      echo "\n".$deeltal." / ".$deler." = ".$fullRes."\n";
+      echo "\n".$deeltal." / ".$deler." = ".number_format($fullRes, 2)."\n"; // Додано number_format для форматування результату
    }else{
-      echo "\n".$deeltal." / ".$deler." = ".$fullRes." (".$rest."/".$deler.")\n";
+      echo "\n".$deeltal." / ".$deler." = ".intval($fullRes)." (".$rest."/".$deler.")\n"; // Використано intval() для отримання цілої частини результату
    }
    $vervolgcontrole = true;
    while ($vervolgcontrole == true){
