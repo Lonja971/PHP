@@ -90,7 +90,13 @@ function action(){
          echo "-_-";
    }
    $answer = $formula/$resetFormula;
-   echo "Antwoord: ".$answer." ".$resetUnit."\n";
+   if (is_float($answer)) {
+      $answer = sprintf("%.10f", $answer);
+      $answer = rtrim($answer, '0');
+      echo "Antwoord: ".$answer." ".$resetUnit."\n";
+   } else {
+      echo "Antwoord: ".number_format($answer)." ".$resetUnit."\n";
+   }
 
    $restart = false;
    while ($restart == false) {
