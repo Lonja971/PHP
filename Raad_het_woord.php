@@ -7,7 +7,7 @@ function game() {
     $words = array('appel','boek','hond','kat','fiets','huis','stoel','tafel','school','auto','boom','zon','regen','bloem','vogel','klok','appartement','glas','deur','sleutel'
     );
     $userAttempt = 0;
-
+    $usedLetters = array();
 
     $randomWord = $words[array_rand($words)];
 
@@ -20,6 +20,11 @@ function game() {
         $userLetter = readline("Voer een letter in: ");
         $userAttempt ++;
         $userLetter = strtolower($userLetter);
+        if (in_array($userLetter, $usedLetters)) {
+            echo "De letter '$userLetter' is al gebruikt.\n";
+            continue;
+        }
+        array_push($usedLetters, $userLetter);
         $found = false;
 
         for ($i = 0; $i < count($letters); $i++) {
