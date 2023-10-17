@@ -93,10 +93,14 @@ function action(){
    if (is_float($answer)) {
       $answer = sprintf("%.10f", $answer);
       $answer = rtrim($answer, '0');
-      echo "Antwoord: ".$answer." ".$resetUnit."\n";
+      if(substr($answer, -1) == '.') {
+          $answer = substr($answer, 0, -1);
+      }
+      echo "\nAntwoord: ".$answer." ".$resetUnit."\n";
    } else {
-      echo "Antwoord: ".number_format($answer)." ".$resetUnit."\n";
+      echo "\nAntwoord: ".number_format($answer)." ".$resetUnit."\n";
    }
+   
 
    $restart = false;
    while ($restart == false) {
