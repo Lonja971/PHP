@@ -101,20 +101,19 @@ function action(){
       echo "\nAntwoord: ".number_format($answer)." ".$resetUnit."\n";
    }
    
-
    $restart = false;
    while ($restart == false) {
-      $readlineOfRestart = readline("Wil je herhalen? (Ja,Nee) ");
-      if (strtolower($readlineOfRestart == "ja")){
-         echo "Prima...\n\n";
-         action();
-      }elseif (strtolower($readlineOfRestart == "nee")){
-         echo "Bedankt voor het gebruiken :)";
-         die;
-      }else{
-         echo "Ik herken niet wat je schreef ;(\n";
-      }
-   }
+       $readlineOfRestart = strtolower(readline("Wil je herhalen? (Ja,Nee) "));
+       if ($readlineOfRestart == "ja"){
+           echo "Prima...\n\n";
+           action();
+       } elseif ($readlineOfRestart == "nee"){
+           echo "Bedankt voor het gebruiken :)";
+           die;
+       } else {
+           echo "Ik herken niet wat je schreef ;(\n";
+       }
+   }   
 
 };
 
