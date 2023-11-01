@@ -97,7 +97,7 @@ function convertArabicToRoman($input) {
             }
         }
 
-        echo "Het Arabische cijfer $input wordt omgezet in een Romeins cijfer: $romanNumber";
+        echo "Het Arabische cijfer $input wordt omgezet in een Romeins cijfer: $romanNumber\n";
     }
 }
 
