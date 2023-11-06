@@ -5,21 +5,21 @@ startProgramm();
 
 function startProgramm() {
     $goodNumber = true;
-    while ($goodNumber == true) {
+    while ($goodNumber) {
         $userNumber = readline("Voer uw nummer in: ");
-        if (preg_match('/[xvimlcd]/i', $userNumber)) {
+        if (preg_match('/^[xvimlcd]+$/i', $userNumber)) {
             $arabicNumber = convertRomanToArabic($userNumber);
             $goodNumber = false;
-        } elseif (is_numeric($userNumber)) {
+        }elseif (is_numeric($userNumber)) {
             convertArabicToRoman($userNumber);
             $goodNumber = false;
         } else {
-            echo "Sorry, onduidelijk antwoord?\n";
+            echo "Het spijt me, ik begrijp het niet. Herhaal dit alstublieft.\n";
         }
     }
 
     $continue = true;
-    while ($continue == true) {
+    while ($continue) {
         $continueInput = readline("Herhalen? (ja/nee): ");
         if (strtolower($continueInput) == 'ja' || strtolower($continueInput) == 'j') {
             $continue = false;
@@ -29,10 +29,11 @@ function startProgramm() {
             echo "Bedankt voor het gebruiken!\n";
             die;
         } else {
-            echo "Sorry, onduidelijk antwoord.\n";
+            echo "Het spijt me, ik begrijp het niet. Herhaal dit alstublieft.\n";
         }
     }
 }
+
 
 function convertRomanToArabic($input) {
    $romanToArabic = [
