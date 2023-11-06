@@ -11,7 +11,7 @@ function startProgramm() {
             $arabicNumber = convertRomanToArabic($userNumber);
             $goodNumber = false;
         }elseif (is_numeric($userNumber)) {
-            convertArabicToRoman($userNumber);
+            convertArabicToRoman($userNumber); 
             $goodNumber = false;
         } else {
             echo "Het spijt me, ik begrijp het niet. Herhaal dit alstublieft.\n";
@@ -53,6 +53,7 @@ function convertRomanToArabic($input) {
    ];
 
    $input = strtoupper($input);
+   $example = $input;
 
    $output = 0;
 
@@ -63,7 +64,7 @@ function convertRomanToArabic($input) {
        }
    }
 
-   echo "Romeins cijfer $input omgezet naar Arabisch cijfer: $output\n";
+   echo "Romeins cijfer $example omgezet naar Arabisch cijfer: $output\n";
 
    return $output;
 }
