@@ -5,6 +5,8 @@ startProgramm();
 
 function startProgramm() {
     $goodNumber = true;
+    $error = "Het spijt me, ik begrijp het niet. Herhaal dit alstublieft.\n";
+    
     while ($goodNumber) {
         $userNumber = readline("Voer uw nummer in: ");
         if (preg_match('/^[xvimlcd]+$/i', $userNumber)) {
@@ -18,7 +20,7 @@ function startProgramm() {
                 $goodNumber = false;
             }
         } else {
-            echo "Het spijt me, ik begrijp het niet. Herhaal dit alstublieft.\n";
+            echo $error;
         }
     }
 
@@ -33,7 +35,7 @@ function startProgramm() {
             echo "Bedankt voor het gebruiken!\n";
             die;
         } else {
-            echo "Het spijt me, ik begrijp het niet. Herhaal dit alstublieft.\n";
+            echo $error;
         }
     }
 }
