@@ -24,7 +24,7 @@ function startProgramm() {
 
     $continue = true;
     while ($continue) {
-        $continueInput = readline("Herhalen? (j/n): ");
+        $continueInput = readline("Herhalen? (ja/nee): ");
         if (strtolower($continueInput) == 'ja' || strtolower($continueInput) == 'j') {
             $continue = false;
             echo "Oke...\n";
