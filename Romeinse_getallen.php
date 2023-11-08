@@ -6,7 +6,6 @@ startProgramm();
 function startProgramm() {
     $goodNumber = true;
     $error = "Het spijt me, ik begrijp het niet. Herhaal dit alstublieft.\n";
-    
     while ($goodNumber) {
         $userNumber = readline("Voer uw nummer in: ");
         if (preg_match('/^[xvimlcd]+$/i', $userNumber)) {
