@@ -1,5 +1,8 @@
 <?php
 
+//Functie-starten
+
+start();
 function start(){
    echo "\nDit is een kassasysteemprogramma.\n";
    $start = true;
@@ -15,13 +18,14 @@ function start(){
       }
    }
 };
-start();
 
 function kassaSysteem(){
    $startSum = true;
    $sumNum = 1;
    $sumVariable = [];
    echo "\n(Typ 'stop' om de lijst te beëindigen)\n";
+
+   //Verzameling-van-aankoopgegevens
    
    while ($startSum == true){
       $userSum = readline("Vul " . $sumNum . "e bedrag in: ");
@@ -35,9 +39,13 @@ function kassaSysteem(){
          echo "Ik begrijp het niet. Herhaal alstublieft!\n";
       }
    }
+
+   //Het-hele-bedrag
    
    $fullPrice = array_sum($sumVariable);
    echo "\nBetaal in totaal: " . number_format($fullPrice, 2, '.', '') . " €\n";
+
+   //Gebruikersberekening
    
    while ($fullPrice > 0){
       $userPayment = readline("Met hoeveel betaalt u: ");
