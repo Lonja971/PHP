@@ -1,19 +1,19 @@
 <?php
 
 while (true) {
-    // Запитайте користувача ввести текст
-    echo "Введіть текст (максимум 250 символів) або 'exit' для виходу: ";
+    // Vraag de gebruiker om tekst in te voeren
+    echo "\nVoer tekst in (maximaal 250 tekens) of 'exit' om af te sluiten: ";
     $tekst = trim(fgets(STDIN));
 
-    // Вийдіть з циклу, якщо користувач ввів 'exit'
+    // Exit-lus als gebruiker 'exit' heeft getypt
     if ($tekst === 'exit') {
-        echo "Програма завершена.\n";
+        echo "Het programma is voltooid.\n";
         break;
     }
 
-    // Перевірте на максимальну довжину
+    // Controleer de maximale lengte
     if (strlen($tekst) > 250) {
-        echo "Введений текст занадто довгий. Максимально дозволено 250 символів.\n";
+        echo "De ingevoerde tekst is te lang. Er zijn maximaal 250 tekens toegestaan.\n";
         continue;
     }
 
@@ -27,14 +27,14 @@ while (true) {
     $aantalLeestekens = preg_match_all('/[,.:"\']/', $tekst);
 
     // Вивести дані
-    echo "\nРезультати:\n";
-    echo "Кількість символів: $aantalTekens\n";
-    echo "Кількість слів: $aantalWoorden\n";
-    echo "Кількість пробілів: $aantalSpaties\n";
-    echo "Кількість речень: $aantalZinnen\n";
-    echo "Кількість голосних: $aantalKlinkers\n";
-    echo "Кількість приголосних: $aantalMedeklinkers\n";
-    echo "Кількість розділових знаків: $aantalLeestekens\n";
+    echo "De resultaten:\n";
+    echo "Aantal tekens: $aantalTekens\n";
+    echo "Aantal woorden: $aantalWoorden\n";
+    echo "Aantal spaties: $aantalSpaties\n";
+    echo "Aantal zinnen: $aantalZinnen\n";
+    echo "Aantal klinkers: $aantalKlinkers\n";
+    echo "Aantal medeklinkers: $aantalMedeklinkers\n";
+    echo "Aantal leestekens: $aantalLeestekens\n";
 }
 
 ?>
